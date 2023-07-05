@@ -1,17 +1,20 @@
 package page.classes;
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.ExcelRead;
 import utilities.GeneralUtilities;
-public class ManageExpenseCatogoryPageClass {
+public class ExpenseCatogoryPageClass {
 	
 	WebDriver driver;
 	
 	GeneralUtilities gl=new GeneralUtilities();
 	
-	public ManageExpenseCatogoryPageClass(WebDriver driver)
+	public ExpenseCatogoryPageClass(WebDriver driver)
 		{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -102,5 +105,10 @@ public class ManageExpenseCatogoryPageClass {
 		{
 		gl.clickElement(deleteElement);
 		gl.alertAccept(driver);
+		}
+	public String readExpence(int row,int col) throws IOException
+		{
+		return ExcelRead.getStringData(row,col);
+		
 		}
 }

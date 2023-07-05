@@ -1,0 +1,250 @@
+<html>
+<head>
+<title>TestNG:  ParallelTest</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>ParallelTest</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>14/0/1</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Jul 05 20:34:26 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>141 seconds (141074 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='execute.page.classes.ExpenseCatogoryPageTestClass.verifyToDeleteCreatedExpense()'><b>verifyToDeleteCreatedExpense</b><br>Test class: execute.page.classes.ExpenseCatogoryPageTestClass</td>
+<td></td>
+<td>3</td>
+<td>execute.page.classes.ExpenseCatogoryPageTestClass@63798ca7</td></tr>
+<tr>
+<td title='execute.page.classes.ManageExpensePageTestClass.verifyToCreateNewManageExpense()'><b>verifyToCreateNewManageExpense</b><br>Test class: execute.page.classes.ManageExpensePageTestClass</td>
+<td></td>
+<td>6</td>
+<td>execute.page.classes.ManageExpensePageTestClass@46944ca9</td></tr>
+<tr>
+<td title='execute.page.classes.ExpenseCatogoryPageTestClass.verifyManageExpenceCatogoryPageIsDisplayedOrNot()'><b>verifyManageExpenceCatogoryPageIsDisplayedOrNot</b><br>Test class: execute.page.classes.ExpenseCatogoryPageTestClass</td>
+<td></td>
+<td>1</td>
+<td>execute.page.classes.ExpenseCatogoryPageTestClass@63798ca7</td></tr>
+<tr>
+<td title='execute.page.classes.LoginPageTestClass.verifySuccessfulLogin()'><b>verifySuccessfulLogin</b><br>Test class: execute.page.classes.LoginPageTestClass<br>Parameters: admin, admin</td>
+<td></td>
+<td>1</td>
+<td>execute.page.classes.LoginPageTestClass@2c1156a7</td></tr>
+<tr>
+<td title='execute.page.classes.LoginPageTestClass.verifyUnSuccessfulLogin()'><b>verifyUnSuccessfulLogin</b><br>Test class: execute.page.classes.LoginPageTestClass<br>Parameters: admin, 1234</td>
+<td></td>
+<td>0</td>
+<td>execute.page.classes.LoginPageTestClass@2c1156a7</td></tr>
+<tr>
+<td title='execute.page.classes.LoginPageTestClass.verifyRemenberMeCheckboxIsSelectedOrNotByDefault()'><b>verifyRemenberMeCheckboxIsSelectedOrNotByDefault</b><br>Test class: execute.page.classes.LoginPageTestClass</td>
+<td></td>
+<td>0</td>
+<td>execute.page.classes.LoginPageTestClass@2c1156a7</td></tr>
+<tr>
+<td title='execute.page.classes.LoginPageTestClass.verifyUnSuccessfulLogin()'><b>verifyUnSuccessfulLogin</b><br>Test class: execute.page.classes.LoginPageTestClass<br>Parameters: welcome, admin</td>
+<td></td>
+<td>0</td>
+<td>execute.page.classes.LoginPageTestClass@2c1156a7</td></tr>
+<tr>
+<td title='execute.page.classes.ManageExpensePageTestClass.verifyToSearchCreatedManageExpense()'><b>verifyToSearchCreatedManageExpense</b><br>Test class: execute.page.classes.ManageExpensePageTestClass</td>
+<td></td>
+<td>3</td>
+<td>execute.page.classes.ManageExpensePageTestClass@46944ca9</td></tr>
+<tr>
+<td title='execute.page.classes.ExpenseCatogoryPageTestClass.verifyToCreateNewExpense()'><b>verifyToCreateNewExpense</b><br>Test class: execute.page.classes.ExpenseCatogoryPageTestClass</td>
+<td></td>
+<td>3</td>
+<td>execute.page.classes.ExpenseCatogoryPageTestClass@63798ca7</td></tr>
+<tr>
+<td title='execute.page.classes.LoginPageTestClass.verifyUnSuccessfulLogin()'><b>verifyUnSuccessfulLogin</b><br>Test class: execute.page.classes.LoginPageTestClass<br>Parameters: amin, 123</td>
+<td></td>
+<td>0</td>
+<td>execute.page.classes.LoginPageTestClass@2c1156a7</td></tr>
+<tr>
+<td title='execute.page.classes.HomePageTestClass.verifyAllTilesAreDisplyedOrNotInHomePage()'><b>verifyAllTilesAreDisplyedOrNotInHomePage</b><br>Test class: execute.page.classes.HomePageTestClass</td>
+<td></td>
+<td>1</td>
+<td>execute.page.classes.HomePageTestClass@487db668</td></tr>
+<tr>
+<td title='execute.page.classes.ManageProductPageTestClass.verifyToSearchCreatedExpense()'><b>verifyToSearchCreatedExpense</b><br>Test class: execute.page.classes.ManageProductPageTestClass</td>
+<td></td>
+<td>2</td>
+<td>execute.page.classes.ManageProductPageTestClass@22bac7bc</td></tr>
+<tr>
+<td title='execute.page.classes.ExpenseCatogoryPageTestClass.verifyToSearchCreatedExpense()'><b>verifyToSearchCreatedExpense</b><br>Test class: execute.page.classes.ExpenseCatogoryPageTestClass</td>
+<td></td>
+<td>2</td>
+<td>execute.page.classes.ExpenseCatogoryPageTestClass@63798ca7</td></tr>
+<tr>
+<td title='execute.page.classes.ManageExpensePageTestClass.verifyManageExpencePageIsDisplayedOrNot()'><b>verifyManageExpencePageIsDisplayedOrNot</b><br>Test class: execute.page.classes.ManageExpensePageTestClass</td>
+<td></td>
+<td>2</td>
+<td>execute.page.classes.ManageExpensePageTestClass@46944ca9</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='execute.page.classes.ManageExpensePageTestClass.verifyToCreateNewManageExpense()'><b>verifyToCreateNewManageExpense</b><br>Test class: execute.page.classes.ManageExpensePageTestClass</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#user_id&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [51f0dc970b3929c750c02a1d5bd5e1d2, findElement {using=id, value=user_id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\REEJAS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62403/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 51f0dc970b3929c750c02a1d5bd5e1d2
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy19.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
+	at utilities.GeneralUtilities.selectByIndex(GeneralUtilities.java:57)
+	at page.classes.ManageExpensePageClass.selectTheValueOfUserDropdown(ManageExpensePageClass.java:106)
+	at execute.page.classes.ManageExpensePageTestClass.verifyToCreateNewManageExpense(ManageExpensePageTestClass.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace713680795", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace713680795'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#user_id&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [51f0dc970b3929c750c02a1d5bd5e1d2, findElement {using=id, value=user_id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\REEJAS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62403/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 51f0dc970b3929c750c02a1d5bd5e1d2
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy19.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
+	at utilities.GeneralUtilities.selectByIndex(GeneralUtilities.java:57)
+	at page.classes.ManageExpensePageClass.selectTheValueOfUserDropdown(ManageExpensePageClass.java:106)
+	at execute.page.classes.ManageExpensePageTestClass.verifyToCreateNewManageExpense(ManageExpensePageTestClass.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</pre></div></td>
+<td>6</td>
+<td>execute.page.classes.ManageExpensePageTestClass@46944ca9</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,25 +1,28 @@
 package execute.page.classes;
 
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import page.classes.HomePageClass;
 import page.classes.LoginPageClass;
-import page.classes.ManageExpenseCatogoryPageClass;
+import retry.analyzer.RetryAnalyzer;
+import page.classes.ExpenseCatogoryPageClass;
 
-public class ManageExpenseCatogoryPageTestClass extends BaseClass {
+public class ExpenseCatogoryPageTestClass extends BaseClass {
 
 	LoginPageClass lp;
 	HomePageClass hp;
-	ManageExpenseCatogoryPageClass mecp;
+	ExpenseCatogoryPageClass mecp;
 	
-	@Test (priority = 1)
+	@Test (priority = 1,retryAnalyzer = RetryAnalyzer.class, groups = {"group1"})
 	public void verifyManageExpenceCatogoryPageIsDisplayedOrNot() {
 		
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
-		mecp = new ManageExpenseCatogoryPageClass(driver);
+		mecp = new ExpenseCatogoryPageClass(driver);
 		
 		lp.login("admin", "admin");
 		hp.clickOnManageExpense();
@@ -30,19 +33,20 @@ public class ManageExpenseCatogoryPageTestClass extends BaseClass {
 		Assert.assertEquals(actual, expected);
 	}
 	
-	@Test (priority = 2)
-	public void verifyToCreateNewExpense() {
+	@Test (priority = 2,retryAnalyzer = RetryAnalyzer.class, groups = {"create"})
+	public void verifyToCreateNewExpense() throws IOException {
 		
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
-		mecp = new ManageExpenseCatogoryPageClass(driver);
+		mecp = new ExpenseCatogoryPageClass(driver);
 		
 		lp.login("admin", "admin");
 		hp.clickOnManageExpense();
 		hp.clickOnManageExpenseCatogory();
 		mecp.clickOnNewCategory();
 		
-		mecp.typeElementOnTextBox("Dry-Fruits");
+		//mecp.typeElementOnTextBox("Dry-Fruits");
+		mecp.typeElementOnTextBox(mecp.readExpence(7, 1));
 		mecp.clickOnSaveButton();
 		
 		String actual=mecp.getTextOfSuccessfullyMessage();
@@ -52,39 +56,41 @@ public class ManageExpenseCatogoryPageTestClass extends BaseClass {
 		Assert.assertEquals(actual, expected);
 	}
 	
-	@Test (priority = 3)
-	public void verifyToSearchCreatedExpense() {
+	@Test (priority = 3,retryAnalyzer = RetryAnalyzer.class, groups = {"search"})
+	public void verifyToSearchCreatedExpense() throws IOException {
 		
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
-		mecp = new ManageExpenseCatogoryPageClass(driver);
+		mecp = new ExpenseCatogoryPageClass(driver);
 		
 		lp.login("admin", "admin");
 		hp.clickOnManageExpense();
 		hp.clickOnManageExpenseCatogory();
 		mecp.clickOnSearchCategory();
 		
-		mecp.typeElementOnSearchTextBox("Dry-Fruits");
+		//mecp.typeElementOnSearchTextBox("Dry-Fruits");
+		mecp.typeElementOnSearchTextBox(mecp.readExpence(7, 1));
 		mecp.clickOnSearchButton();
 		
 		String actual=mecp.getTextOfSearchElementOnTable();
-		String expected = "Dry-Fruits";
+		String expected = "Dry-Fruits-Apple";
 		Assert.assertEquals(actual, expected);
 	}
 	
-	@Test (priority = 4)
-	public void verifyToDeleteCreatedExpense() {
+	@Test (priority = 4,retryAnalyzer = RetryAnalyzer.class,groups = {"delete"})
+	public void verifyToDeleteCreatedExpense() throws IOException {
 		
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
-		mecp = new ManageExpenseCatogoryPageClass(driver);
+		mecp = new ExpenseCatogoryPageClass(driver);
 		
 		lp.login("admin", "admin");
 		hp.clickOnManageExpense();
 		hp.clickOnManageExpenseCatogory();
 		mecp.clickOnSearchCategory();
 		
-		mecp.typeElementOnSearchTextBox("Dry-Fruits");
+		//mecp.typeElementOnSearchTextBox("Dry-Fruits");
+		mecp.typeElementOnSearchTextBox(mecp.readExpence(7, 1));
 		mecp.clickOnSearchButton();
 		
 		mecp.clickOnDelete();

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="extend.report.TestListener"></listener>
+	</listeners>
+	<test thread-count="6" name="ChromeTest">
+		<parameter name="Browser" value="chrome"></parameter>
+		<classes>
+			<class name="execute.page.classes.LoginPageTestClass" />
+			<class name="execute.page.classes.HomePageTestClass" />
+			<class name="execute.page.classes.ManageExpensePageTestClass" />
+			<class name="execute.page.classes.ManageProductPageTestClass" />
+			<class name="execute.page.classes.ExpenseCatogoryPageTestClass" />
+		</classes>
+	</test>
+	
+	<test thread-count="6" name="EdgeTest">
+		<parameter name="Browser" value="Edge"></parameter>
+		<classes>
+			<class name="execute.page.classes.LoginPageTestClass" />
+			<class name="execute.page.classes.HomePageTestClass" />
+			<class name="execute.page.classes.ManageExpensePageTestClass" />
+			<class name="execute.page.classes.ManageProductPageTestClass" />
+			<class name="execute.page.classes.ExpenseCatogoryPageTestClass" />
+		</classes>
+	</test>
+</suite> 
