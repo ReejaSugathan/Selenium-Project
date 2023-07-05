@@ -1,6 +1,7 @@
 package execute.page.classes;
 
 import java.awt.AWTException;
+import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,7 +9,8 @@ import org.testng.annotations.Test;
 import page.classes.HomePageClass;
 import page.classes.LoginPageClass;
 import page.classes.ManageExpensePageClass;
-import utilities.FileUploadRobotClass;
+import retry.analyzer.RetryAnalyzer;
+
 
 public class ManageExpensePageTestClass extends BaseClass{
 	
@@ -16,7 +18,7 @@ public class ManageExpensePageTestClass extends BaseClass{
 	HomePageClass hp;
 	ManageExpensePageClass mep;
 	
-	@Test (priority = 1)
+	@Test (priority = 1,retryAnalyzer = RetryAnalyzer.class, groups = {"group1"})
 	public void verifyManageExpencePageIsDisplayedOrNot() {
 		
 		lp = new LoginPageClass(driver);
@@ -31,8 +33,8 @@ public class ManageExpensePageTestClass extends BaseClass{
 		String expected = "List Expense";
 		Assert.assertEquals(actual, expected);
 	}
-  @Test (priority = 2)
-  public void verifyToCreateNewManageExpense() throws AWTException{
+  @Test (priority = 2,retryAnalyzer = RetryAnalyzer.class, groups = {"create"})
+  public void verifyToCreateNewManageExpense() throws AWTException, IOException{
 	  
 	  	lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
@@ -44,12 +46,15 @@ public class ManageExpensePageTestClass extends BaseClass{
 		
 		mep.clickOnNewCategory();
 		mep.selectTheValueOfUserDropdown(1);
+		
 		mep.selectTheValueOfOrderId(5);
 		mep.selectTheValueOfPurchaseIdDropdown(5);
 		mep.typeElementOnDateTextBox("25/06/2023");
 		mep.selectTheValueOfExpenseType(2);
-		mep.typeElementOnAmountTextBox("400");
-		//mep.chooseFileUploading("System.getProperty("user-dir")+"\src\test\resources\ARYN-LOV.jpg"");
+		
+		mep.typeElementOnAmountTextBox(mep.readinteger(5, 1));
+		//mep.typeElementOnAmountTextBox("400");
+		//mep.chooseFileUploading(System.getProperty("user.dir")+"\\src\\test\\resources\\project.png");
 		mep.chooseFileUploadingRobotClass();
 		
 		mep.clickOnSaveButton();
@@ -59,7 +64,7 @@ public class ManageExpensePageTestClass extends BaseClass{
 				+ "Expense Record Created Successfully";
 		Assert.assertEquals(actual, expected);
   }
-  @Test (priority = 3)
+  @Test (priority = 3,retryAnalyzer = RetryAnalyzer.class, groups = {"search"})
   public void verifyToSearchCreatedManageExpense(){
 	  
 	  	lp = new LoginPageClass(driver);

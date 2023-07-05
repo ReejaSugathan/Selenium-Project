@@ -14,7 +14,7 @@ public class FileUploadRobotClass {
 		Robot rb = new Robot();
 		
 		// Store the File path to the StringSelection class
-		StringSelection filePath = new StringSelection("System.getProperty(\"user-dir\")+\"\\src\\test\\resources\\ARYN-LOV.jpg\"");
+		StringSelection filePath = new StringSelection(System.getProperty("user.dir")+"\\src\\test\\resources\\project.png");
          //System.getProperty("user-dir")+"\src\test\resources\ARYN-LOV.jpg"
 		// Copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePath, null);

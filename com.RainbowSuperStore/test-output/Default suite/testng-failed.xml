@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="execute.page.classes.ManageExpensePageTestClass">
+      <class name="execute.page.classes.ManageProductPageTestClass">
         <methods>
           <include name="afterMethod"/>
-          <include name="verifyToCreateNewManageExpense"/>
           <include name="beforeMethod"/>
-          <include name="verifyToSearchCreatedManageExpense"/>
-          <include name="verifyManageExpencePageIsDisplayedOrNot"/>
+          <include name="verifyToSearchCreatedExpense"/>
         </methods>
-      </class> <!-- execute.page.classes.ManageExpensePageTestClass -->
+      </class> <!-- execute.page.classes.ManageProductPageTestClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

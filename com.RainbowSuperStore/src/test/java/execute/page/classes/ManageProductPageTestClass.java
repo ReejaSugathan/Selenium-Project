@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import page.classes.HomePageClass;
 import page.classes.LoginPageClass;
 import page.classes.ManageProductPageClass;
+import retry.analyzer.RetryAnalyzer;
 
 public class ManageProductPageTestClass extends BaseClass {
 	
@@ -12,7 +13,7 @@ public class ManageProductPageTestClass extends BaseClass {
 	HomePageClass hp;
 	ManageProductPageClass mpp;
 
-	@Test
+	@Test (retryAnalyzer = RetryAnalyzer.class, groups = {"search"})
 	public void verifyToSearchCreatedExpense() {
 		
 		lp = new LoginPageClass(driver);

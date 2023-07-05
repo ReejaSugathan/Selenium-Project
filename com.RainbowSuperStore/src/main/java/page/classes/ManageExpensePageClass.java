@@ -1,12 +1,14 @@
 package page.classes;
 
 import java.awt.AWTException;
+import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.ExcelRead;
 import utilities.FileUploadRobotClass;
 import utilities.GeneralUtilities;
 
@@ -151,6 +153,14 @@ public class ManageExpensePageClass {
 	public String getTextOfSearchElementOnTable()
 	{
 	return gl.getTextofElement(searchElementOnTable);
+	}
+	public String readString(int row,int col) throws IOException
+	{
+	return ExcelRead.getStringData(row,col);
+	}
+	public String readinteger(int row,int col) throws IOException
+	{
+	return ExcelRead.getIntegerData(row, col);
 	}
 	
 	
