@@ -47,7 +47,6 @@ public class BaseClass {
 		{
 			WebDriverManager.edgedriver().setup();
 			driver=new EdgeDriver();
-			
 		}
 		
 		//driver.get("http://groceryapp.uniqassosiates.com/admin");
